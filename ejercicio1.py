@@ -88,3 +88,28 @@ if c > 2000000 and d > 3:
 print(f"número de inscripcion: {a}")
 print(f"nombre completo: {b}")
 print(f"su pago de matricula es de: {constante_matricula:.2f}")
+
+# ejercicio de estructura secuencial
+#6 (8)
+print("ingrese datos de la esfera 1")
+pi = 3.1416
+peso1 = float(input("ingrese el peso de la esfera 1 en kg: "))
+tamaño1 = float(input("ingrese el radio de la esfera 1 m: "))
+densidad1 = 3 * peso1 / (4 * pi * tamaño1 ** 3)
+
+print("ingrese datos de la esfera 2")
+peso2 = float(input("ingrese el peso de la esfera 2 en kg: "))
+tamaño2 = float(input("ingrese el radio de la esfera 2 m: "))
+densidad2 = 3 * peso2 / (4 * pi * tamaño2 ** 3)
+
+print("ingrese datos de la esfera 3")
+peso3 = float(input("ingrese el peso de la esfera 3 en kg: "))
+tamaño3 = float(input("ingrese el radio de la esfera 3 m: "))
+densidad3 = 3 * peso3 / (4 * pi * tamaño3 ** 3)
+
+if densidad1 > densidad2 and densidad1 > densidad3:
+    print("la esfera 1 es la de mayor densidad")
+elif densidad2 > densidad1 and densidad2 > densidad3:
+    print("la esfera 2 es la de mayor densidad")
+else:
+    print("la esfera 3 es la de mayor densidad")
