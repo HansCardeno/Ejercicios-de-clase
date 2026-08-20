@@ -113,3 +113,29 @@ elif densidad2 > densidad1 and densidad2 > densidad3:
     print("la esfera 2 es la de mayor densidad")
 else:
     print("la esfera 3 es la de mayor densidad")
+
+#7 (9)
+num1 = float(input("Ingresa un primer número: "))
+num2 = float(input("Ingresa un segundo número: "))
+num3 = float(input("Ingresa un tercer número: "))
+num4 = float(input("Ingresa un cuarto número: "))
+min = num1
+max = num1
+
+if num2 < min:
+    min = num2
+else:
+    max = num2
+
+if num3 < min:
+    min = num3
+else:
+    max = num3
+
+if num4 < min:
+    min = num4
+else:
+    max = num4
+
+suma = min + max
+print(f"La suma del valor menor y mayor es: {suma:.2f}")
