@@ -58,7 +58,7 @@ num1 = int(input("Ingresa el primer entero: "))
 num2 = int(input("Ingresa el segundo entero: "))
 resultado = 0
 
-for i in range(num2):
+for a in range(num2):
     resultado += num1
 
 print(f"El resultado de la multiplicación es: {resultado}")
@@ -67,7 +67,7 @@ print(f"El resultado de la multiplicación es: {resultado}")
 notas = int(input("ingrese su numero de notas: "))
 suma_n = 0
 
-for i in range(notas):
+for b in range(notas):
     nota = float(input(f"Ingrese la nota {i + 1} (de 0 a 5): "))
     suma_n += nota
 
@@ -80,7 +80,7 @@ print("utilice solo numeros enteros positivos de maximo valor 9")
 N = int(input("Ingrese un valor para n (máximo 9): "))
 X = int(input("Ingrese un valor para x (máximo 9): "))
 
-for i in range(N + 1):
+for c in range(N + 1):
     resultado = i ** X
     print(f"{i}^{X} = {resultado}")
 
@@ -88,7 +88,7 @@ for i in range(N + 1):
 N = int(input("Ingrese el valor límite N: "))
 suma_impar = 0
 
-for i in range(1, N + 1):
+for r in range(1, N + 1):
     if i % 2 != 0:
         suma_impar += i
 
