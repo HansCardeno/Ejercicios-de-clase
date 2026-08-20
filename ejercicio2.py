@@ -120,3 +120,19 @@ for i in range(1, n + 1):
     sumatoria += termino
 
 print(f"El resultado de la sumatoria es: {sumatoria}")
+
+#repaso y plus
+num1 = int(input("Ingrese un número entero: "))
+num2 = int(input("Ingrese otro número entero: "))
+num1 += 4*3 
+num2 *= 3**3
+
+print(f"El primer número después de la operación es: {num1}")
+print(f"El segundo número después de la operación es: {num2}")
+
+name1 = input(f"\ningrese un nombre para el primer número ({num1}): ")
+name2 = input(f"ingrese un nombre para el segundo número ({num2}): ")
+
+print(f"\nel {name1} tiene un valor de {num1} y el {name2} tiene un valor de {num2}.")
+print("el {} tiene un valor {} y el {} tiene un valor {}.".format(name1, num1, name2, num2))
+print("el %s tiene el valor %d y el %s tiene el valor %d." % (name1, num1, name2, num2))
