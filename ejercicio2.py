@@ -51,3 +51,72 @@ fahrenheit = (celcius * 9/5) + 32
 print(f"temperatura en grados celcius es: {celcius:.1f}°")
 print(f"temperatura en grados kelvin es: {kelvin:.1f}°")
 print(f"temperatura en grados fahrenheit es: {fahrenheit:.1f}°")
+
+#ejercicios ciclos
+#1
+num1 = int(input("Ingresa el primer entero: "))
+num2 = int(input("Ingresa el segundo entero: "))
+resultado = 0
+
+for i in range(num2):
+    resultado += num1
+
+print(f"El resultado de la multiplicación es: {resultado}")
+
+#2
+notas = int(input("ingrese su numero de notas: "))
+suma_n = 0
+
+for i in range(notas):
+    nota = float(input(f"Ingrese la nota {i + 1} (de 0 a 5): "))
+    suma_n += nota
+
+promedio = suma_n / notas
+
+print(f"El promedio de la materia es: {promedio}")
+
+#3
+print("utilice solo numeros enteros positivos de maximo valor 9")
+N = int(input("Ingrese un valor para n (máximo 9): "))
+X = int(input("Ingrese un valor para x (máximo 9): "))
+
+for i in range(N + 1):
+    resultado = i ** X
+    print(f"{i}^{X} = {resultado}")
+
+#4
+N = int(input("Ingrese el valor límite N: "))
+suma_impar = 0
+
+for i in range(1, N + 1):
+    if i % 2 != 0:
+        suma_impar += i
+
+print(f"La suma de los números impares es: {suma_impar}")
+
+#5
+while True:
+    numero = int(input("Ingrese un número entero entre 0 y 20: "))
+    
+    if numero < 0 or numero > 20:
+        print("porfavor, ingrese un número entre 0 y 20.")
+    else:
+        factorial = 1
+        for i in range(1, numero + 1):
+            factorial *= i
+        print(f"El factorial de {numero} es:{factorial}")
+    
+    opt = input("¿Desea volver a empezar? (s/n): ")
+    if opt.lower() != 's':
+        break
+
+#6
+a = float(input("Ingrese un valor para a: "))
+n = int(input("Ingrese el número de términos n: "))
+sumatoria = 0.0
+
+for i in range(1, n + 1):
+    termino = (1 / a) ** i
+    sumatoria += termino
+
+print(f"El resultado de la sumatoria es: {sumatoria}")
