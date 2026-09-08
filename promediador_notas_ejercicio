@@ -1,3 +1,4 @@
+#Promediador de notas
 print("promediador de notas".upper().center(100))
 prom1 = .30
 prom2 = .15
@@ -41,3 +42,72 @@ while True:
         print("cerrando programa")
         break
 print("gracias por utilizar el programa")
+
+#ejercicio de formateo
+print("para calcular el cuadrado y el cubo de un numero:")
+p = float(input("\ningrese un numero: "))
+q = p**2
+r = p**3
+print("el cuadrado del numero {} es {:.2f} y el cubo {:.2f}".format(p,q,r))
+
+#ejercicio de formateo y /r
+aum1 = .10
+aum2 = .12
+aum3 = .15
+sal = float(input("\ningrese su salario para determinar el aumento: "))
+nuevo1 = sal + (sal*aum1)
+nuevo2 = sal + (sal*aum2)
+nuevo3 = sal + (sal*aum3)
+print(f"""\ntu salario con un aumento del 10% es: {nuevo1} 
+        \rtu salario con un aumento del 12% es: {nuevo2} 
+        \rtu salario con un aumento del 15% es: {nuevo3}""")
+
+#ejercicio contadores y acumuladores
+print("--- Contadores ---")
+print("Un contador es una variable que se incrementa o decrementa en una cantidad fija (generalmente 1) cada vez que ocurre un evento o se repite una iteración. Se usa para llevar la cuenta de cuántas veces sucede algo.")
+
+# Ejemplo de contador
+print("\nEjemplo de Contador: Contar números pares hasta 10")
+contador_pares = 0
+for i in range(1, 11):
+    if i % 2 == 0:
+        contador_pares += 1 # El contador se incrementa en 1
+        print(f"Número par encontrado: {i}")
+print(f"Total de números pares encontrados: {contador_pares}")
+
+print("\n--- Acumuladores ---")
+print("Un acumulador es una variable que suma (acumula) valores a lo largo de un proceso iterativo. A diferencia de un contador, que incrementa en una cantidad fija, un acumulador incrementa su valor con el valor de otra variable en cada iteración.")
+
+# Ejemplo de acumulador
+print("\nEjemplo de Acumulador: Sumar los primeros 5 números")
+acumulador_suma = 0
+for i in range(1, 6):
+    acumulador_suma += i # El acumulador suma el valor de 'i'
+    print(f"Sumando {i}, el total actual es: {acumulador_suma}")
+print(f"La suma total de los primeros 5 números es: {acumulador_suma}")
+
+print("\n--- Ejemplo Combinado (Contador y Acumulador) ---")
+print("Calcular el promedio de números positivos ingresados por el usuario.")
+
+acumulador_numeros = 0
+contador_numeros = 0
+
+while True:
+    numero_str = input("Ingrese un número positivo (o 'fin' para terminar): ")
+    if numero_str.lower() == 'fin':
+        break
+
+    numero = float(numero_str)
+    if numero > 0:
+        acumulador_numeros += numero # Acumulador: suma los números ingresados
+        contador_numeros += 1      # Contador: cuenta cuántos números positivos se ingresaron
+    else:
+        print("Por favor, ingrese un número positivo.")
+
+if contador_numeros > 0:
+    promedio = acumulador_numeros / contador_numeros
+    print(f"\nSe ingresaron {contador_numeros} números positivos.")
+    print(f"La suma de los números positivos es: {acumulador_numeros:.2f}")
+    print(f"El promedio de los números positivos es: {promedio:.2f}")
+else:
+    print("No se ingresaron números positivos para calcular el promedio.")
