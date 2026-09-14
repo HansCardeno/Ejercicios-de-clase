@@ -111,3 +111,143 @@ if contador_numeros > 0:
     print(f"El promedio de los números positivos es: {promedio:.2f}")
 else:
     print("No se ingresaron números positivos para calcular el promedio.")
+
+#ejercicio pre-parcial
+print("Bienvenido al sistema".upper().center(100))
+perro_cont = 0
+gato_cont = 0
+listaperro = []
+listagato = []
+
+while True:
+    opt = int(input("""\ningrese la opcion que desea realizar:
+\r1- ingresar un nuevo paciente
+\r2- ver cantidad de pacientes
+\r3- ver promedio de edades
+\r4- cantidad de pacientes criticos y graves
+\r5- buscar paciente
+\r6- ver todos los pacientes
+\r7- eliminar un paciente
+\r8- salir\n"""))
+
+    if opt == 1:
+        mas = list()
+        mas.append(input("\ningrese el nombre del animal: "))
+        mas.append(int(input("ingrese 1-si es perro 2-si es gato: ")))
+        if mas[1] == 1:
+            mas[1] = "perro"
+            perro_cont += 1
+            codigo = "Can{:03d}".format(perro_cont)
+            listaperro.append(mas)
+        elif mas[1] == 2:
+            mas[1] = "gato"
+            gato_cont += 1
+            codigo = "Fel{:03d}".format(gato_cont) 
+            listagato.append(mas)
+        else:
+          print("porfavor ingrese de nuevo y responda con una opcion valida")
+          continue
+        mas.append(int(input("ingrese la edad del paciente: ")))
+        est = (int(input("ingrese estado del paciente (1-para grave, 2-para critico): ")))
+        if est == 1:
+            mas.append("grave")
+        elif est == 2: 
+            mas.append("critico")
+        else:
+          print("porfavor ingrese de nuevo y responda con una opcion valida")
+          continue
+        print("paciente guardado como {0} con codigo {1}".format(mas[1],codigo))
+
+    elif opt == 2:
+        c = int(input("""elija que opcion desea realizar: 
+    \r1- ver antidad Perros
+    \r2- ver Cantidad gatos
+    \r3- ver total animales\n"""))
+        if c == 1:
+            print(f"\nhay {len(listaperro)} cantitdad de perros en el sistema")
+        if c == 2:
+            print(f"\nhay {len(listagato)} cantidad de gatos en el sistema")
+        if c == 3:
+            print("\nhay {} animales en el sistema".format(len(listaperro)+len(listagato)))
+            
+    elif opt == 3:
+        suma = 0
+        for o in listagato:
+            suma += o[2]
+        for o in listaperro:
+            suma += o[2]
+        print(f"El promedio de edades es: {suma/(len(listagato)+len(listaperro)):.2f}")
+        
+    elif opt == 4:
+        grave = 0
+        critico = 0
+        for i in listagato:
+            if i[3] == "grave":
+                grave += 1
+            elif i[3] == "critico":
+                critico += 1
+        for i in listaperro:
+            if i[3] == "grave":
+                grave += 1
+            elif i[3] == "critico":
+                critico += 1
+        print(f"Hay {grave} pacientes graves y {critico} criticos en el sistema")
+            
+    elif opt == 5:
+        codigo = (input("ingrese codigo del animal que desea buscar: ")).capitalize()
+        if codigo.startswith("F"):
+            lista = listaperro
+        elif codigo.startswith("C"):
+            lista = listagato
+        else:
+            print("Ingrese correctamente el codigo\n")
+            continue
+        for i in lista:
+            if codigo == i[3]:
+                print(f"""nombre: {a[0]}
+                      \rtipo: {a[1]}
+                      \redad: {a[2]}
+                      \restado: {a[3]}""")
+                break
+        else:
+            print("el animal que desea buscar no es paciente, ingrese de nuevo")
+
+    elif opt == 6:
+        l = listagato + listaperro
+        for x in l:
+            print(f"""nombre: {a[0]}
+            \rtipo: {a[1]}
+            \redad: {a[2]}
+            \restado: {a[3]}""")
+
+    elif opt == 7:
+        codigo = (input("ingrese codigo del animal que desea eliminar: ")).capitalize()
+        if codigo.startswith("F"):
+            cant = listaperro
+        elif codigo.startswith("C"):
+            cant = listagato
+        else:
+            print("Ingrese un correctamente el código")
+            continue
+        for a in cant:
+            if codigo == a[3]:
+                cant.remove(a)
+                print(f"El paciente {a[0]} ha sido eliminado del sistema")
+                break
+        else:
+            print("el animal que desea buscar no es paciente, ingrese denuevo")
+            
+    elif opt == 8:
+        fallo = 0
+        while fallo < 3:
+            menu = input("""\n1-Aceptar
+\r2-Rechazar\n""")
+            if menu == "1" or menu == "2":
+                break
+            else:
+                fallo += 1
+                print("ingrese una opcion valida")
+        if menu == "1":
+            break
+        else:
+            continue
