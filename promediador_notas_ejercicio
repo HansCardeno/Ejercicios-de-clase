@@ -205,9 +205,9 @@ while True:
         for i in lista:
             if codigo == i[3]:
                 print(f"""nombre: {a[0]}
-                      \rtipo: {a[1]}
-                      \redad: {a[2]}
-                      \restado: {a[3]}""")
+            \rtipo: {a[1]}
+            \redad: {a[2]}
+            \restado: {a[3]}""")
                 break
         else:
             print("el animal que desea buscar no es paciente, ingrese de nuevo")
@@ -216,9 +216,9 @@ while True:
         l = listagato + listaperro
         for x in l:
             print(f"""nombre: {a[0]}
-            \rtipo: {a[1]}
-            \redad: {a[2]}
-            \restado: {a[3]}""")
+        \rtipo: {a[1]}
+        \redad: {a[2]}
+        \restado: {a[3]}""")
 
     elif opt == 7:
         codigo = (input("ingrese codigo del animal que desea eliminar: ")).capitalize()
